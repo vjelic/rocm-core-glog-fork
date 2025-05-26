@@ -174,7 +174,7 @@ function( configure_debian_pkg PACKAGE_NAME_T COMPONENT_NAME_T PACKAGE_VERSION_T
     # Check If Debian Platform
     find_file (DEBIAN debian_version debconf.conf PATHS /etc)
     if(DEBIAN)
-      set( BUILD_DEBIAN_PKGING_FLAG ON CACHE INTERNAL BOOL "Internal Status Flag to indicate Debian Packaging Build" FORCE )
+      set( BUILD_DEBIAN_PKGING_FLAG ON CACHE BOOL "Internal Status Flag to indicate Debian Packaging Build" FORCE )
       set_debian_pkg_cmake_flags( ${PACKAGE_NAME_T} ${PACKAGE_VERSION_T}
                                   ${MAINTAINER_NM_T} ${MAINTAINER_EMAIL_T} )
 

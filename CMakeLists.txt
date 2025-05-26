@@ -74,7 +74,7 @@ set( EXTENDED_PACKAGE_DESCRIPTION
      to make it easy to remove all of ROCm with a package manager." CACHE STRING "Debian Package Extended Description")
 
 set( BUILD_ENABLE_LINTIAN_OVERRIDES OFF CACHE BOOL "Enable/Disable Lintian Overrides" )
-set( BUILD_DEBIAN_PKGING_FLAG OFF CACHE INTERNAL BOOL "Internal Status Flag to indicate Debian Packaging Build" )
+set( BUILD_DEBIAN_PKGING_FLAG OFF CACHE BOOL "Internal Status Flag to indicate Debian Packaging Build" )
 if(NOT ENABLE_ASAN_PACKAGING)
     option(FILE_REORG_BACKWARD_COMPATIBILITY "Enable File Reorg with backward compatibility" OFF)
 endif()
@@ -319,7 +319,7 @@ set(CPACK_DEBIAN_RUNTIME_PACKAGE_CONFLICTS "rocm-clang-ocl")
 set(CPACK_RPM_RUNTIME_PACKAGE_OBSOLETES "rocm-clang-ocl")
 
 # Custom installation for Debian Lintian File
-if( BUILD_ENABLE_LINTIAN_OVERRIDES AND BUILD_DEBIAN_PKGING_FLAG )
+if( BUILD_ENABLE_LINTIAN_OVERRIDES STREQUAL "ON" AND BUILD_DEBIAN_PKGING_FLAG STREQUAL "ON")
     set( OVERRIDE_FILE "${CMAKE_BINARY_DIR}/DEBIAN/${DEB_OVERRIDES_INSTALL_FILENM}" )
     if(COMP_TYPE)
 	set( OVERRIDE_TEMP_INSTALL_LOC "/_CPack_Packages/Linux/DEB/${CORE_TARGET}-${CPACK_PACKAGE_VERSION}-Linux/${COMP_TYPE}" )
