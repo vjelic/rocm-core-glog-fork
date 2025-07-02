@@ -290,7 +290,7 @@ message(STATUS "Using CPACK_RPM_PACKAGE_RELEASE: ${CPACK_RPM_PACKAGE_RELEASE}")
 set ( CPACK_RPM_FILE_NAME "RPM-DEFAULT" )
 
 # Debian Lintian Fix - Add Dependency for Python Script delivered
-set( DEB_DEPENDS_STRING "python3, libc6 (>= 2.34)" )
+set( DEB_DEPENDS_STRING "python3, libc6" )
 
 # Debian package specific variables
 set ( CPACK_DEBIAN_PACKAGE_DEPENDS ${DEB_DEPENDS_STRING} )
